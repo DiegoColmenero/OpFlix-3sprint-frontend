@@ -1,0 +1,24 @@
+.menu{
+    color: #3EB35F;
+    font-size: 2em;
+    margin-left: -2%;
+    margin-top: 3%;
+}
+.menu a{
+    padding-left: 200px;
+    list-style-type: none;
+    text-decoration: none;
+    color: #3EB35F;
+}
+nav{
+    background: black;
+    background-size: 100%;
+    margin-top: -1%;
+    margin-left: -1%;
+    display: flex;
+    font-family: 'Overpass', sans-serif;
+}
+.logo{
+    margin-top: 2%;
+    margin-left: 2%;
+}

@@ -1,0 +1,23 @@
+footer{
+    background-color: black;
+    margin-left: -1%;
+    height: 150px;
+    margin-top: 5%;
+}
+.facebook{
+    margin-left: 41%;
+    margin-top: 3%;
+}
+.twitter{
+    margin-left: 3%;
+}
+.whats{
+    margin-left: 3%;
+}
+footer p{
+    color: white;
+    text-align: center;
+    font-size: 0.7em;
+    margin-top: 3%;
+    font-family: 'Overpass', sans-serif;
+}
