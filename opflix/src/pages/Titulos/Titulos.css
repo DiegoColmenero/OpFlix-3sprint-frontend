@@ -1,0 +1,631 @@
+h1{
+    color: rgb(195, 195, 195);
+    font-family: 'Overpass', sans-serif;
+    margin-top: 3%;
+    margin-left: 20.5%;
+}
+.informacoes_titulo{
+    color: white;
+    text-align: center;
+    display: row;
+}
+.informacoes_titulo img{
+    filter: brightness(40%);
+    transition: filter 1s;
+}
+.q1 :hover{
+    filter: brightness(90%);
+}
+.q2 :hover{
+    filter: brightness(150%);
+}
+.q3 :hover{
+    filter: brightness(100%);
+}
+.titulinhos{
+    border: 2px solid white;
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    margin-top: 3%;
+    max-height: 300px;
+    margin-left: 20%;
+    font-family: 'Shadows Into Light', cursive;
+    color: rgb(195, 195, 195);
+    
+}
+.titulinhos h4{
+    padding-right: 2%;
+}
+.primeiro{
+    margin-left: 2%;
+    color: #3EB35F;
+}
+.d1{
+    display: flex;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+.d2{
+    display: flex;
+    margin-left: 25%;
+}
+.q4 :hover{
+    filter: brightness(100%);
+}
+.q5 :hover{
+    filter: brightness(100%);
+}
+.q6 :hover{
+    filter: brightness(100%);
+}
+.d3{
+    display: flex;
+    margin-left: 25%;
+}
+.q7 :hover{
+    filter: brightness(100%);
+}
+.q8 :hover{
+    filter: brightness(100%);
+}
+.q9 :hover{
+    filter: brightness(100%);
+}
+.d4{
+    display: flex;
+    margin-left: 25%;
+}
+.q10 :hover{
+    filter: brightness(100%);
+}
+.q11 :hover{
+    filter: brightness(100%);
+}
+.q12 :hover{
+    filter: brightness(100%);
+}
+
+.d5{
+    display: flex;
+    margin-left: 25%;
+}
+.q13 :hover{
+    filter: brightness(100%);
+}
+.q14 :hover{
+    filter: brightness(100%);
+}
+.q15 :hover{
+    filter: brightness(100%);
+}
+
+.d6{
+    display: flex;
+    margin-left: 25%;
+}
+.q16 :hover{
+    filter: brightness(100%);
+}
+.q17 :hover{
+    filter: brightness(100%);
+}
+.q18 :hover{
+    filter: brightness(100%);
+}
+
+.d7{
+    display: flex;
+    margin-left: 25%;
+}
+.q19 :hover{
+    filter: brightness(100%);
+}
+.q20 :hover{
+    filter: brightness(100%);
+}
+.q21 :hover{
+    filter: brightness(100%);
+}
+/* q - margin */
+.q1{
+    display: flex;
+    flex-direction: column;
+}
+.q2{
+    margin-left: 5%;
+}
+.q3{
+    margin-left: 5%;
+}
+.q5{
+    margin-left: 5%;
+}
+.q6{
+    margin-left: 5%;
+}
+.q8{
+    margin-left: 5%;
+}
+.q9{
+    margin-left: 5%;
+}
+.q11{
+    margin-left: 5%;
+}
+.q12{
+    margin-left: 5%;
+}
+.q14{
+    margin-left: 5%;
+}
+.q15{
+    margin-left: 5%;
+}
+.q17{
+    margin-left: 5%;
+}
+.q18{
+    margin-left: 5%;
+}
+.q20{
+    margin-left: 5%;
+}
+.q21{
+    margin-left: 5%;
+}
+.jota{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* Dropdown Button */
+.q1 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q1 a :hover{
+    filter: brightness(100%);
+}
+.q2 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q2 a :hover{
+    filter: brightness(100%);
+}
+.q2{
+    display: flex;
+    flex-direction: column;
+}
+
+.q3 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q3 a :hover{
+    filter: brightness(100%);
+}
+.q3{
+    display: flex;
+    flex-direction: column;
+}
+
+.q4 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q4 a :hover{
+    filter: brightness(100%);
+}
+.q4{
+    display: flex;
+    flex-direction: column;
+}
+
+.q5 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q5 a :hover{
+    filter: brightness(100%);
+}
+.q5{
+    display: flex;
+    flex-direction: column;
+}
+
+.q6 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q6 a :hover{
+    filter: brightness(100%);
+}
+.q6{
+    display: flex;
+    flex-direction: column;
+}
+
+.q7 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -16.7%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    text-align: center;
+    
+}
+.q7 a :hover{
+    filter: brightness(100%);
+}
+.q7{
+    display: flex;
+    flex-direction: column;
+}
+
+.q8 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q8 a :hover{
+    filter: brightness(100%);
+}
+.q8{
+    display: flex;
+    flex-direction: column;
+}
+
+.q9 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q9 a :hover{
+    filter: brightness(100%);
+}
+.q9{
+    display: flex;
+    flex-direction: column;
+}
+
+.q10 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q10 a :hover{
+    filter: brightness(100%);
+}
+.q10{
+    display: flex;
+    flex-direction: column;
+}
+
+.q11 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q11 a :hover{
+    filter: brightness(100%);
+}
+.q11{
+    display: flex;
+    flex-direction: column;
+}
+
+.q12 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -16.7%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    text-align: center;
+    
+}
+.q12 a :hover{
+    filter: brightness(100%);
+}
+.q12{
+    display: flex;
+    flex-direction: column;
+}
+
+.q13 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q13 a :hover{
+    filter: brightness(100%);
+}
+.q13{
+    display: flex;
+    flex-direction: column;
+}
+
+.q14 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q14 a :hover{
+    filter: brightness(100%);
+}
+.q14{
+    display: flex;
+    flex-direction: column;
+}
+
+.q15 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q15 a :hover{
+    filter: brightness(100%);
+}
+.q15{
+    display: flex;
+    flex-direction: column;
+}
+
+.q16 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q16 a :hover{
+    filter: brightness(100%);
+}
+.q16{
+    display: flex;
+    flex-direction: column;
+}
+
+.q17 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q17 a :hover{
+    filter: brightness(100%);
+}
+.q17{
+    display: flex;
+    flex-direction: column;
+}
+.q18 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q18 a :hover{
+    filter: brightness(100%);
+}
+.q18{
+    display: flex;
+    flex-direction: column;
+}
+
+.q19 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q19 a :hover{
+    filter: brightness(100%);
+}
+.q19{
+    display: flex;
+    flex-direction: column;
+}
+
+.q20 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q20 a :hover{
+    filter: brightness(100%);
+}
+.q20{
+    display: flex;
+    flex-direction: column;
+}
+
+.q21 a {
+    background-color: #3EB35F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+    top: -12.5%;
+    filter: brightness(30%);
+    transition: filter 1s;
+    text-decoration: none;
+    
+}
+.q21 a :hover{
+    filter: brightness(100%);
+}
+.q21{
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    color: rgb(195, 195, 195);
+    font-family: 'Overpass', sans-serif;
+    margin-top: 5%;
+    font-size: 2em;
+}

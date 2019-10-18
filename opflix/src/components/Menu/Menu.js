@@ -1,19 +1,23 @@
-import React from 'react';
+import React,{Component} from 'react';
 import logo from '../../assets/img/opflix-logo-verde.png';
 import '../../components/Menu/Menu.css'
+import {Link} from 'react-router-dom'
+class Menu extends Component{
 
-function Menu(){
-    return(
-        <header>
+    render(){
+
+        return(
+            <header>
         <nav>
             <img src={logo} className="logo"/>
             <div className="menu">
-                <a class="home">Home</a>
-                <a href="">Ver Títulos</a>
-                <a>Login</a>
+                <Link to="/" class="home">Home</Link>
+                <Link to="/titulos">Ver Títulos</Link>
+                <Link to="/login">Login</Link>
             </div>
         </nav>
     </header>
     );
+}
 }
 export default Menu;

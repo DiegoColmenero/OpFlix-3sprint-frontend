@@ -5,7 +5,10 @@
     margin-top: 3%;
 }
 .menu a{
-    padding-left: 200px;
+    padding-top: 37px;
+    padding-bottom: 37px;
+    padding-left: 60px;
+    padding-right: 60px;
     list-style-type: none;
     text-decoration: none;
     color: #3EB35F;
@@ -18,7 +21,14 @@ nav{
     display: flex;
     font-family: 'Overpass', sans-serif;
 }
+.menu{
+    margin-left: 10%;
+}
 .logo{
     margin-top: 2%;
     margin-left: 2%;
+}
+.menu a:hover{
+    color: rgb(0, 255, 72);
+    background: rgb(75, 75, 75);
 }

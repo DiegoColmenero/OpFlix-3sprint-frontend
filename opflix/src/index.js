@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './pages/Home/App';
+import Titulos from './pages/Titulos/Titulos'
+import Login from './pages/Login/Login'
 // import Titulos from './pages/Filmes/Filmes';
 import * as serviceWorker from './serviceWorker';
 
@@ -11,14 +13,14 @@ const routing = (
         <div>
             <Switch>
                 <Route exact path="/" component={App}/>
-                {/* <Route path="/filmes" component={Filmes}/> */}
-                {/* <Route path="/login" component={Login}/> */}
+                <Route path="/titulos" component={Titulos}/>
+                <Route path="/login" component={Login}/>
                 {/* <Route component={NaoEncontrado} /> */}
             </Switch>
         </div>
     </Router>
 );
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(routing, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

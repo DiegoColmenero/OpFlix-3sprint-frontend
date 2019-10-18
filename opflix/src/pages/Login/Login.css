@@ -1,0 +1,16 @@
+.text__login{
+    color: white;
+}
+.container_flex{
+    display: flex;
+    margin-left: 37%;
+    margin-top: 15%;
+    text-align: center;
+    border: 2px solid white;
+    flex-direction: column;
+    width: 26%;
+    padding: 30px;
+}
+.form{
+    margin-top: 4%;
+}
