@@ -1,8 +1,9 @@
 h1{
-    color: rgb(195, 195, 195);
+    color: rgb(67, 204, 106);
     font-family: 'Overpass', sans-serif;
     margin-top: 3%;
-    margin-left: 20.5%;
+    margin-left: 17%;
+    font-size: 2.2em;
 }
 .informacoes_titulo{
     color: white;
@@ -23,7 +24,7 @@ h1{
     filter: brightness(100%);
 }
 .titulinhos{
-    border: 2px solid white;
+    border: 2px solid rgb(195, 195, 195);
     width: 60%;
     text-align: center;
     display: flex;
@@ -32,7 +33,7 @@ h1{
     -moz-border-radius: 15px;
     border-radius: 15px;
     margin-top: 3%;
-    max-height: 300px;
+    max-height: 380px;
     margin-left: 20%;
     font-family: 'Shadows Into Light', cursive;
     color: rgb(195, 195, 195);
@@ -337,7 +338,7 @@ h1{
     font-size: 16px;
     width: 100%;
     position: relative;
-    top: -12%;
+    top: -11.9%;
     filter: brightness(30%);
     transition: filter 1s;
     text-decoration: none;
@@ -358,7 +359,7 @@ h1{
     font-size: 16px;
     width: 100%;
     position: relative;
-    top: -12%;
+    top: -11.9%;
     filter: brightness(30%);
     transition: filter 1s;
     text-decoration: none;
@@ -379,7 +380,7 @@ h1{
     font-size: 16px;
     width: 100%;
     position: relative;
-    top: -12%;
+    top: -11.9%;
     filter: brightness(30%);
     transition: filter 1s;
     text-decoration: none;
@@ -400,7 +401,7 @@ h1{
     font-size: 16px;
     width: 100%;
     position: relative;
-    top: -12%;
+    top: -11.9%;
     filter: brightness(30%);
     transition: filter 1s;
     text-decoration: none;
@@ -421,7 +422,7 @@ h1{
     font-size: 16px;
     width: 100%;
     position: relative;
-    top: -16.7%;
+    top: -16.6%;
     filter: brightness(30%);
     transition: filter 1s;
     text-decoration: none;
@@ -623,9 +624,26 @@ h1{
     display: flex;
     flex-direction: column;
 }
-h2{
+.trailers{
     color: rgb(195, 195, 195);
     font-family: 'Overpass', sans-serif;
     margin-top: 5%;
     font-size: 2em;
+    margin-left: 41.5%;
+}
+.legenda{
+    color: rgb(195, 195, 195);
+    display: flex;
+    font-family: 'Overpass', sans-serif;
+    margin-left: -1.5%;
+    text-align: center;
+    margin-top: 2%;
+    box-shadow: 2px black;
+}
+.legenda h3{
+    padding-left: 3%;
+    font-size: 1.5em;
+}
+.l0{
+    color: #3EB35F;
 }

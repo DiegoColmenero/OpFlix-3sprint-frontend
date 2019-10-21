@@ -4,13 +4,79 @@
 .container_flex{
     display: flex;
     margin-left: 37%;
-    margin-top: 15%;
+    /* padding-top: 2%; */
     text-align: center;
-    border: 2px solid white;
     flex-direction: column;
     width: 26%;
     padding: 30px;
+    background-color: rgba(0, 0, 0, 0.76);
 }
 .form{
     margin-top: 4%;
 }
+.input__login{
+    height: 50px;
+    width: 300px;
+    background-color: rgb(20, 29, 23);
+    font-family: 'Overpass', sans-serif;
+    border-radius: 10px;
+    border-color: rgba(0, 0, 0, 0.76);
+    color: white;
+}
+/* .btn_btn__login{
+    margin-top: 10%;
+    font-family: 'Overpass', sans-serif;
+    width: 200px;
+    border: none;
+    border-radius: 4px;
+    height: 200%;
+    background: #3EB35F;
+    font-size: 1.3em;
+} */
+#login__loginA{
+    background-image: url(../../assets/img/fundo-login.jpg);
+    padding-top: 14%;
+    padding-bottom: 14%;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3EB35F;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 10%;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

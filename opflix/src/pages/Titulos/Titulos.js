@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import { parseJwt } from "../../services/auth"
 import Menu from '../../components/Menu/Menu';
 import Rodape from '../../components/Rodape/Rodape';
 import './Titulos.css';
@@ -29,18 +30,17 @@ class Titulos extends Component{
         super();
         this.state = {
             lista:[],
-            upFilme: {}
             
 
         }
     }
 
     componentDidMount(){
-        fetch('http://localhost:5000/api/titulos')
-        .then(response => response.json())
-        .then(data => this.setState({ lista: data}));
-      }
+      fetch('http://localhost:5000/api/titulos')
+      .then(response => response.json())
+      .then(data => this.setState({ lista: data}));
       
+      }
     
       upAltasAventuras() {
         fetch('http://localhost:5000/api/titulos/25')
@@ -61,28 +61,45 @@ class Titulos extends Component{
                 <div className="conteudo">
 
                 
+                <div className="branco">
                 <h1>AQUI ESTÃO TODOS OS TÍTULOS E SEUS ATRIBUTOS</h1>
-                  
+                <div className="legenda">
+
+
+                  <h3 className="l0">Nome</h3>
+                  <h3 className="l1">Sinópse</h3>
+                  <h3 className="l2">Duração (h)</h3>
+
+
+                  <h3 className="l3">Data de<br/> Lançamento</h3>
+                  <h3 className="l4">Classificação</h3>
+                  <h3 className="l5">Categoria</h3>
+
+                  <h3 className="l6">Plataforma</h3>
+                  <h3 className="l7">Produtora</h3>
+                  <h3 className="l8">Tipo de <br/>título</h3>
+                </div>
 
                 {this.state.lista.map(element =>{
                   return(
                     <div className="titulinhos">
                                         <h4 className="primeiro">{element.nome}</h4>
-                                        <h4>{element.sinopse}</h4>
-                                        <h4>{element.duracao}</h4>
-                                        <h4>{element.dataLancamento}</h4>
-                                        <h4>{element.classificacao}</h4>
-                                        <h4>{element.nomeCategoria}</h4>
-                                        <h4>{element.nomeplataforma}</h4>
-                                        <h4>{element.nomeprodutora}</h4>
-                                        <h4>{element.nomeTipoTitulo}</h4>
+                                        <h4 className="e1">{element.sinopse}</h4>
+                                        <h4 className="e2">{element.duracao}</h4>
+                                        <h4 className="e3">{element.dataLancamento}</h4>
+                                        <h4 className="e4">{element.classificacao}</h4>
+                                        <h4 className="e5">{element.nomeCategoria}</h4>
+                                        <h4 className="e6">{element.nomePlataforma}</h4>
+                                        <h4 className="e7">{element.nomeProdutora}</h4>
+                                        <h4 className="e8">{element.nomeTipoTitulo}</h4>
 
                                     </div>
                                 )
                               })}
       
               
-                  <h2>Veja os trailers!</h2>
+                              </div>
+                  <h2 className="trailers">Veja os trailers!</h2>
             
             <div className='informacoes_titulo'>
 

@@ -35,8 +35,8 @@ class Login extends Component{
         .then(response => {
             if (response.status === 200) {
                 console.log(response.data)
-                localStorage.setItem("usuario-gufos",response.data.token);
-                this.props.history.push('/titulos');
+                localStorage.setItem("usuario-opflix",response.data.token);
+                this.props.history.push('/');
             }else{
                 console.log('Erro')
             }
@@ -51,7 +51,7 @@ class Login extends Component{
     
     render(){
         return(
-            <div>
+            <div id="login__loginA">
 
 
 
@@ -94,9 +94,7 @@ class Login extends Component{
                 />
             </div>
             <div className="item">
-              <button className="btn btn__login" id="btn__login">
-                Login
-              </button>
+              <button className="button"><span>Login </span></button>
             </div>
           </form>
         </div>

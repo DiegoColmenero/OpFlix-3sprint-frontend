@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Menu from '../../components/Menu/Menu';
 import Rodape from '../../components/Rodape/Rodape';
 import './App.css';
+import { parseJwt } from "../../services/auth"
 import { Link } from 'react-router-dom';
 import opflix from '../../assets/img/banner-opflix.png';
 import vikings from '../../assets/img/banner-vikings.png'
@@ -21,6 +22,7 @@ class App extends Component{
     
     componentDidMount(){
       this.showSlides();
+      console.log(parseJwt())
     }
 
     showSlides = () =>  {
