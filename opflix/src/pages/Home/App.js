@@ -22,7 +22,7 @@ class App extends Component{
     
     componentDidMount(){
       this.showSlides();
-      console.log(parseJwt())
+      // console.log(parseJwt())
     }
 
     showSlides = () =>  {

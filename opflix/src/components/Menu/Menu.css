@@ -1,10 +1,10 @@
-.menu{
+  /* .menu{
     color: #3EB35F;
     font-size: 2em;
     margin-left: -2%;
     margin-top: 3%;
-}
-.menu a{
+} 
+.menuDeslogado a{
     padding-top: 37px;
     padding-bottom: 37px;
     padding-left: 80px;
@@ -12,23 +12,113 @@
     list-style-type: none;
     text-decoration: none;
     color: #3EB35F;
-}
+    font-size: 1.5em;
+} 
 nav{
     background: black;
-    background-size: 100%;
-    margin-top: -1%;
-    margin-left: -1%;
+    margin-top: 0%;
     display: flex;
-    font-family: 'Overpass', sans-serif;
 }
-.menu{
+nav img{
+    width: 19%;
+}
+.menuDeslogado{
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+ .menu{
     margin-left: 10%;
 }
 .logo{
     margin-top: 2%;
     margin-left: 2%;
 }
-.menu a:hover{
+.menuDeslogado a:hover{
     color: rgb(0, 255, 72);
     background: rgb(75, 75, 75);
+}  */
+
+nav{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
 }
+nav img{
+    max-width: 15%;
+    position: relative;
+    left: 41%;
+}
+.menuDeslogado{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+.menuDeslogado a{
+    list-style-type: none;
+    text-decoration: none;
+    color: #3EB35F;
+    font-size: 1.5em;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    left: 23%;
+    background-color: rgb(12, 12, 12);
+}
+.menuAdm a:hover{
+    color: rgb(0, 255, 72);
+    background: rgb(75, 75, 75);
+}  
+.menuAdm{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+.menuAdm a{
+    list-style-type: none;
+    text-decoration: none;
+    color: #3EB35F;
+    font-size: 1.5em;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    left: 23%;
+    background-color: rgb(12, 12, 12);
+}
+.menuAdm a:hover{
+    color: rgb(0, 255, 72);
+    background: rgb(75, 75, 75);
+}  
+.menuAdm a:hover{
+    color: rgb(0, 255, 72);
+    background: rgb(75, 75, 75);
+}  
+.menuCliente{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+.menuCliente a{
+    list-style-type: none;
+    text-decoration: none;
+    color: #3EB35F;
+    font-size: 1.5em;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    left: 23%;
+    background-color: rgb(12, 12, 12);
+}
+.menuCliente a:hover{
+    color: rgb(0, 255, 72);
+    background: rgb(75, 75, 75);
+}  

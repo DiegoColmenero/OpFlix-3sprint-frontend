@@ -42,11 +42,6 @@ class Titulos extends Component{
       
       }
     
-      upAltasAventuras() {
-        fetch('http://localhost:5000/api/titulos/25')
-        .then(response => response.json())
-        .then(data => this.setState({upFilme: data}))
-      }
       
 
 
