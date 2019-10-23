@@ -67,6 +67,7 @@ nav img{
     position: relative;
     left: 23%;
     background-color: rgb(12, 12, 12);
+    font-family: 'Overpass', sans-serif;
 }
 .menuAdm a:hover{
     color: rgb(0, 255, 72);
@@ -90,8 +91,9 @@ nav img{
     position: relative;
     left: 23%;
     background-color: rgb(12, 12, 12);
+    font-family: 'Overpass', sans-serif;
 }
-.menuAdm a:hover{
+.menuDeslogado a:hover{
     color: rgb(0, 255, 72);
     background: rgb(75, 75, 75);
 }  
@@ -117,6 +119,7 @@ nav img{
     position: relative;
     left: 23%;
     background-color: rgb(12, 12, 12);
+    font-family: 'Overpass', sans-serif;
 }
 .menuCliente a:hover{
     color: rgb(0, 255, 72);

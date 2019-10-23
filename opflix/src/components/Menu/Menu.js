@@ -21,6 +21,11 @@ class Menu extends Component{
         }
         console.log(this.state.permissao)
     }
+    logout = () =>{
+        localStorage.clear(this.state.token);
+        // this.props.history.push('/');
+        window.location.reload();
+    }
     // componentDidMount(){
     //     this.setState({permissao: parseJwt().TipoDeUsuario})
     // }
@@ -83,8 +88,8 @@ class Menu extends Component{
     
                 
                     <Link to="/" class="home">Home</Link>
-                    <Link to="/titulos">Administrar</Link>
-                    <Link to="/login">Logout</Link>
+                    <Link to="/administrador">Administrar</Link>
+                    <Link onClick={this.logout}>Logout</Link>
                 </div>
                 ):''
                 }

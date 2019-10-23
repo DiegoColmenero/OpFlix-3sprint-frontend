@@ -22,6 +22,11 @@ class Administrador extends Component{
             nomePlataforma: '',
             nomeProdutora: '',
             nomeTipoTitulo: '',
+            sucesso: '',
+            idCategoria: '',
+            token: localStorage.getItem('usuario-opflix')
+
+            
         }
     }
 
@@ -36,29 +41,29 @@ class Administrador extends Component{
       atualizarCategoria = (e) =>{
         e.preventDefault();
         this.setState({categoria: e.target.value});
+        
       }
-      
-      adicionaCategoriaNaLista = (e) =>{
-        fetch('http://localhost:5000/api/categorias')
-          .then(response => response.json())
-          .then(data => this.setState({ lista: data}))
-          .catch(error => console.log(error));
-  
-  
-      }  
-      adicionarItem = (e) =>{
-        // e.preventDefault();
+       
+      adicionarItem = () =>{
         fetch('http://localhost:5000/api/categorias',{
           method: 'POST', body: JSON.stringify({categoria: this.state.categoria}),
-          headers: {"Content-Type": "application/json"}
+          headers: {"Accept": "application/json",
+                    "Authorization": "Bearer " + this.state.token}
         })
           .then(response => response.json())
           .then(data => console.log(data))
-          .then(fetch(this.adicionaCategoriaNaLista))
+          // .then(fetch(this.adicionaCategoriaNaLista))
           .catch(error => console.log(error));
   
         
       };
+      deletarCategoria = (e) =>{
+        fetch('http://localhost:500/api/categorias/' + e.idCategoria,{
+          method: 'DELETE', headers:{"Accept" : "application/json",
+          "Authorization" : "Bearer " + this.state.token}
+
+        })
+      }
 
       //TITULOS
       verTitulos = () =>{
@@ -111,28 +116,32 @@ class Administrador extends Component{
               .then(response => response.json())
               .then(data => this.setState({ listaTitulo: data}))
               .catch(error => console.log(error));
-      
-      
           }  
+
           adicionarItemTitulo = (e) =>{
-            // e.preventDefault();
+            console.log(this.state.nome, this.state.sinopse, this.state.duracao, this.state.classificacao)
             fetch('http://localhost:5000/api/titulos',{
               method: 'POST', body: JSON.stringify({
                 nome: this.state.nome,
                 sinopse: this.state.sinopse,
-                duracao: this.state.duracao,
+                duracao: Number(this.state.duracao),
                 dataLancamento: this.state.dataLancamento,
                 classificacao: this.state.classificacao,
-                idCategoria: this.state.nomeCategoria,
-                idPlataforma: this.state.nomePlataforma,
-                idProdutora: this.state.nomeProdutora,
-                idTipoTitulo: this.state.nomeTipoTitulo
+              
+                idCategoria: Number (this.state.nomeCategoria),
+                idPlataforma: Number(this.state.nomePlataforma),
+                idProdutora: Number(this.state.nomeProdutora),
+                idTipoTitulo: Number(this.state.nomeTipoTitulo)
             }),
-              headers: {"Content-Type": "application/json"}
+              headers: {"Accept": "application/json",
+                        "Authorization": "Bearer " + this.state.token}
             })
               .then(response => response.json())
               .then(data => console.log(data))
               .then(fetch(this.adicionaTituloNaLista))
+              .then(sucesso => {
+                this.setState({sucesso: "Titulo cadastrado com sucesso!"});
+            })
               .catch(error => console.log(error));
       
             
@@ -143,24 +152,13 @@ class Administrador extends Component{
         return(
             <div>
                 <Menu/>
-                {this.state.lista.map(element =>{
-                  return(
-                    <div className="categorias">
-                                        <h4 className="primeiro">{element.categoria}</h4>
-                                        
-
-                                    </div>
-
-                                    
-                                )
-                              })}
+                <h1 className="titulo_categoria">Categorias</h1>
                               <div className="cadastro">
 
-                                  <h2>Cadastrar Categoria</h2>
+                                  <h2>Cadastrar <br/>Categoria</h2>
                                   <form>
                                     <input type="text" 
                                     className="digitarCategoria" 
-                                    placeholder="Categoria" 
                                     value={this.state.categoria} 
                                     onChange={this.atualizarCategoria}>
                                     </input>
@@ -172,10 +170,23 @@ class Administrador extends Component{
                                    
                                   </form>
                               </div>
-                              <button 
-                              className="buscarTitulos" 
-                              onClick={this.verTitulos}>
-                              Ver titulos</button>
+                              {this.state.lista.map(element =>{
+                                return(
+                                  <div className="categorias">
+                                                      <h4>{element.categoria}</h4>
+                                                      
+              
+                                                  </div>
+              
+                                                  
+                                              )
+                                            })}
+                              
+                                    <button
+                                    id="administrador__buttonBuscarTitulos"
+                                    onClick={this.verTitulos}
+                                    >
+                                    <span>Ver Titulos </span></button>
                 {this.state.listaTitulo.map(element =>{
                   return(
                     <div className="titulinhos">
@@ -194,6 +205,7 @@ class Administrador extends Component{
                               })}
 
                               <div className="cadastrar_titulo">
+                                <h1>Cadastrar Titulo</h1>
                             <input type="text" 
                                     className="nome" 
                                     placeholder="Nome" 
@@ -212,22 +224,6 @@ class Administrador extends Component{
                                     value={this.state.duracao} 
                                     onChange={this.atualizarDuracao}>   
                             </input>
-                            <input type="date" 
-                                    className="data"  
-                                    value={this.state.dataLancamento} 
-                                    onChange={this.atualizarDataLancamento}>   
-                            </input>                  
-                            <select className="classificacao" 
-                                    placeholder="Classificação"
-                                    value={this.state.classificacao}
-                                    onChange={this.atualizarClassificacao}>
-                                    <option value="L">L</option>
-                                    <option value="10+">10+</option>
-                                    <option value="12+">12+</option>
-                                    <option value="14+">14+</option>
-                                    <option value="16+">16+</option>
-                                    <option value="18+">18+</option>
-                            </select>
                             <input type="text" 
                                     className="nomeCategoria" 
                                     placeholder="Categoria" 
@@ -252,6 +248,29 @@ class Administrador extends Component{
                                     value={this.state.nomeTipoTitulo} 
                                     onChange={this.atualizarNomeTipoTitulo}>   
                             </input>
+                            <label>Data de Lançamento</label>
+                            <input type="date" 
+                                    className="data"  
+                                    value={this.state.dataLancamento} 
+                                    onChange={this.atualizarDataLancamento}>   
+                            </input>               
+                            <label>Classificação</label>   
+                            <select className="classificacao" 
+                                    placeholder="Classificação"
+                                    value={this.state.classificacao}
+                                    onChange={this.atualizarClassificacao}>
+                                    <option value="L">L</option>
+                                    <option value="10+">10+</option>
+                                    <option value="12+">12+</option>
+                                    <option value="14+">14+</option>
+                                    <option value="16+">16+</option>
+                                    <option value="18+">18+</option>
+                            </select>
+                            {/* <p className="text"
+                    style={{color: "green", textAlign: "center"}}               
+                    > */}
+                    {/* {this.state.sucesso} */}
+                {/* </p> */}
                             <button
                                     id="administrador__buttonCadastrar"
                                     onClick={this.adicionarItemTitulo}
@@ -261,7 +280,22 @@ class Administrador extends Component{
 
 
                               </div>
-                
+                <div className="deletar_categoria">
+                  <label>Deletar Categoira</label>
+                  <select>
+                  {this.state.lista.map(element =>{
+                    return(
+                      // <div className="selecionar_as_categorias">
+                                  <option value={element.idCategoria}>{element.categoria}</option>
+                                  // </div>
+                                )})}
+                      </select>
+                      <button
+                                    id="administrador__buttonCadastrar"
+                                    onClick={this.deletarCategoria}
+                                    >
+                                    <span>Deletar </span></button>
+                </div>
             </div>
         );
     }
