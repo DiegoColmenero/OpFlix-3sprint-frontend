@@ -236,3 +236,77 @@ label{
   font-family: 'Overpass', sans-serif;
   font-size: 1.5em;
 }
+
+.deletar_titulo{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(56, 56, 56);
+  padding: 60px;
+  height: 300px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 5%;
+  width: 500px;
+  margin-left: 33%;
+  margin-bottom: 2%;
+}
+.deletar_titulo label{
+  margin-top: -5%;
+  font-size: 3em;
+  text-align: center;
+}
+.deletar_titulo select{
+  width: 200px;
+  border: black;
+  width: 350px;
+  font-family: 'Overpass', sans-serif;
+  border-radius: 8px;
+  border-color: rgba(0, 0, 0, 0.76);
+  color: black;
+  margin-top: 5%;
+  height: 40px;
+  margin-left: 3%;
+}
+
+#administrador__buttonDeletar {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #3EB35F;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: 'Overpass', sans-serif;
+  margin-top: 10%;
+  margin-left: 20%;
+}
+
+#administrador__buttonDeletar span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#administrador__buttonDeletar span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#administrador__buttonDeletar:hover span {
+  padding-right: 25px;
+}
+
+#administrador__buttonDeletar:hover span:after {
+  opacity: 1;
+  right: 0;
+}

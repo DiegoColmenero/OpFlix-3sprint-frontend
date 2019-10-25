@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Menu from '../../components/Menu/Menu'
 import './Administrador.css';
+import axios from 'axios'
 
 
 
@@ -13,6 +14,7 @@ class Administrador extends Component{
             lista:[],
             listaTitulo:[],
             categoria: '',
+            idTitulo: '',
             nome: '',
             sinopse: '',
             duracao: '',
@@ -36,36 +38,61 @@ class Administrador extends Component{
       fetch('http://localhost:5000/api/categorias')
       .then(response => response.json())
       .then(data => this.setState({ lista: data}));
+      fetch('http://localhost:5000/api/titulos')
+        .then(response => response.json())
+        .then(data => this.setState({ listaTitulo: data}));
       
       }
       atualizarCategoria = (e) =>{
         e.preventDefault();
         this.setState({categoria: e.target.value});
+        console.log(this.state.categoria)
         
       }
        
-      adicionarItem = () =>{
-        fetch('http://localhost:5000/api/categorias',{
-          method: 'POST', body: JSON.stringify({categoria: this.state.categoria}),
-          headers: {"Accept": "application/json",
-                    "Authorization": "Bearer " + this.state.token}
+      adicionarItem = (e) =>{
+        e.preventDefault();
+        axios.post('http://localhost:5000/api/categorias', {
+          categoria: this.state.categoria
+        },
+        {
+          
+            headers: {
+              Authorization: "Bearer " + this.state.token
+            }
+          
         })
-          .then(response => response.json())
-          .then(data => console.log(data))
-          // .then(fetch(this.adicionaCategoriaNaLista))
-          .catch(error => console.log(error));
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
+        console.log(this.state.categoria, "a")
   
         
       };
-      deletarCategoria = (e) =>{
-        fetch('http://localhost:500/api/categorias/' + e.idCategoria,{
-          method: 'DELETE', headers:{"Accept" : "application/json",
-          "Authorization" : "Bearer " + this.state.token}
-
+      deletarTitulo = (e) =>{
+        e.preventDefault()
+        var titulo = document.getElementById("adm__selecionarTituloDeletar");
+        var tituloSelecionado = titulo.options[titulo.selectedIndex].value;
+        console.log(tituloSelecionado)
+        axios.delete('http://localhost:5000/api/titulos/' + tituloSelecionado, 
+        {
+          
+            headers: {
+              Authorization: "Bearer " + this.state.token
+            }
+          
         })
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
+        console.log(tituloSelecionado, "a")
+        // fetch('http://localhost:500/api/categorias/' + e.idCategoria,{
+        //   method: 'DELETE', headers:{"Accept" : "application/json",
+        //   "Authorization" : "Bearer " + this.state.token}
+
+        // })
       }
 
       //TITULOS
+
       verTitulos = () =>{
         fetch('http://localhost:5000/api/titulos')
         .then(response => response.json())
@@ -118,31 +145,32 @@ class Administrador extends Component{
               .catch(error => console.log(error));
           }  
 
+          
           adicionarItemTitulo = (e) =>{
-            console.log(this.state.nome, this.state.sinopse, this.state.duracao, this.state.classificacao)
-            fetch('http://localhost:5000/api/titulos',{
-              method: 'POST', body: JSON.stringify({
+            var classificacao = document.getElementById("adm__classi");
+            var classificacaoSelecionada = classificacao.options[classificacao.selectedIndex].value;
+            console.log(classificacaoSelecionada)
+            e.preventDefault();
+            axios.post('http://localhost:5000/api/titulos', {
                 nome: this.state.nome,
                 sinopse: this.state.sinopse,
                 duracao: Number(this.state.duracao),
                 dataLancamento: this.state.dataLancamento,
-                classificacao: this.state.classificacao,
-              
+                classificacao: classificacaoSelecionada,
                 idCategoria: Number (this.state.nomeCategoria),
                 idPlataforma: Number(this.state.nomePlataforma),
                 idProdutora: Number(this.state.nomeProdutora),
                 idTipoTitulo: Number(this.state.nomeTipoTitulo)
-            }),
-              headers: {"Accept": "application/json",
-                        "Authorization": "Bearer " + this.state.token}
+            },
+            {
+              
+                headers: {
+                  Authorization: "Bearer " + this.state.token
+                }
+              
             })
-              .then(response => response.json())
-              .then(data => console.log(data))
-              .then(fetch(this.adicionaTituloNaLista))
-              .then(sucesso => {
-                this.setState({sucesso: "Titulo cadastrado com sucesso!"});
-            })
-              .catch(error => console.log(error));
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
       
             
           };
@@ -182,11 +210,11 @@ class Administrador extends Component{
                                               )
                                             })}
                               
-                                    <button
+                                    {/* <button
                                     id="administrador__buttonBuscarTitulos"
                                     onClick={this.verTitulos}
                                     >
-                                    <span>Ver Titulos </span></button>
+                                    <span>Ver Titulos </span></button> */}
                 {this.state.listaTitulo.map(element =>{
                   return(
                     <div className="titulinhos">
@@ -256,6 +284,7 @@ class Administrador extends Component{
                             </input>               
                             <label>Classificação</label>   
                             <select className="classificacao" 
+                            id="adm__classi"
                                     placeholder="Classificação"
                                     value={this.state.classificacao}
                                     onChange={this.atualizarClassificacao}>
@@ -280,19 +309,19 @@ class Administrador extends Component{
 
 
                               </div>
-                <div className="deletar_categoria">
-                  <label>Deletar Categoira</label>
-                  <select>
-                  {this.state.lista.map(element =>{
+                <div className="deletar_titulo">
+                  <label>Deletar Titulo</label>
+                  <select id="adm__selecionarTituloDeletar">
+                  {this.state.listaTitulo.map(element =>{
                     return(
                       // <div className="selecionar_as_categorias">
-                                  <option value={element.idCategoria}>{element.categoria}</option>
+                                  <option value={element.idTitulo}>{element.nome}</option>
                                   // </div>
                                 )})}
                       </select>
                       <button
-                                    id="administrador__buttonCadastrar"
-                                    onClick={this.deletarCategoria}
+                                    id="administrador__buttonDeletar"
+                                    onClick={this.deletarTitulo}
                                     >
                                     <span>Deletar </span></button>
                 </div>
